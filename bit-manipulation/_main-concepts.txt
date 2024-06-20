@@ -1,0 +1,93 @@
+
+MAIN CONCEPTS:
+--------------
+
+a € (0, 1)
+
+⭐ OR = |
+Switch bit ON,
+a | 1 = 1
+a | 0 = a
+
+⭐ AND = &
+Switch bit OFF,
+a & 1 = a
+a & 0 = 0
+
+⭐ XOR = ^
+Toggle bit
+a ^ 1 = ~a
+a ^ 0 = a
+
+⭐ Right Shift = >>
+00100101 (x)
+00000100101 (x >> 3)
+11100100101 (x >> 3) -ve
+
+⭐ Left Shift = <<
+00100101 (x)
+00000100000 (x << 3)
+
+⭐ Triple Right Shift = >>>
+00100101 (x)
+00000100101 (x >>> 3)
+00000100101 (x >>> 3) -ve, always 0
+
+⭐ 1's Complement = ~
+00100101 (x)
+11011010 (~x)
+
+⭐ 2's Complement = -x
+⭐ 2's Complement = ~x + 1
+
+
+Playing with Kth isKthBitSet
+----------------------------
+
+⭐ Turn Off k-th bit in a number
+10101010 (x)
+00001000 (x << 3) 
+11110111 (~(x << 3))
+10100010 (x & (~(x << 3)))
+    
+⭐ Turn On k-th bit in a number
+10101010 (x)
+00001000 (x << 3)
+10101010 (x | (x << 3))
+    
+⭐ Check if k-th bit is set for a number
+10101010 (x)
+00001000 (x << 3)
+00001000 (x & (x << 3))
+    
+⭐ Toggle the k-th bit for a number
+10101010 (x)
+00001000 (x << 3)
+10100010 (x ^ (x << 3))
+    
+    
+Binary to Decimal Conversion
+----------------------------
+    
+If MSB == 0
+   - convert to decimal
+   - add positive sign
+    
+If MSB == 1
+  - use 2's complement
+  - convert to decimal
+  - add negative sign
+
+
+Decimal to Binary Conversion
+----------------------------
+
+if positive number
+  - convert to binary 
+  - fit in bits 
+
+if negative number
+  - leave the sing
+  - convert to binary 
+  - 2's complement
+  - fit in bits 
